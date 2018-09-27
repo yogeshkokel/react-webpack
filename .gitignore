@@ -1,0 +1,9 @@
+node_modules
+data
+!data/.gitkeep
+config.json
+public/*
+!public/.gitkeep
+.vscode
+coverage
+dist
