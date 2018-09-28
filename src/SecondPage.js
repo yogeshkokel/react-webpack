@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css'
+import { connect } from "react-redux";
+import Form from './Form';
 
 class SecondPage extends Component {
   render() {
@@ -13,8 +15,14 @@ class SecondPage extends Component {
         <p className="App-intro">
           To get started, edit <code>src/SecondPage.js</code> and save to reload.
         </p>
+        <Form />
       </div>
     );
   }
 }
+
+const mapStateToProps = state => {
+  return { articles: state.articles };
+};
+
 export default SecondPage;
