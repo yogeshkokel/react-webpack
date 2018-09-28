@@ -96,7 +96,7 @@ class Story extends Component {
                 <br />
                 <div className="container mt-5 mb-3 mb-md-4">
                     <a href="#">
-                        <img src={require("./img/story/ad.png")} className="mx-auto d-block shadow img-fluid" />
+                        <img src={require("./img/story/ad.PNG")} className="mx-auto d-block shadow img-fluid" />
                     </a>
                 </div>
                 <div className="container">
@@ -213,7 +213,7 @@ class Story extends Component {
                 </div>
                 <div className="container my-5">
                     <a href="#">
-                        <img src={require("./img/story/ad.png")} className="mx-auto d-block shadow img-fluid" />
+                        <img src={require("./img/story/ad.PNG")} className="mx-auto d-block shadow img-fluid" />
                     </a>
                 </div>
                 {/* Instagram Feed  */}
