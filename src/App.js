@@ -18,7 +18,8 @@ class App extends Component {
         </p>
         <List />
         <Link to="/second-page"><h2>Second Page</h2></Link>
-        <Route path="/second-page" component={SecondPage} />
+        <Link to="/about"><h2>About us</h2></Link>
+        <Link to="/story"><h2>Story</h2></Link>
       </div>
 
     );

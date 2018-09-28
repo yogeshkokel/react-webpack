@@ -1,16 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Loadable from 'react-loadable';
-// import App from './App';
-// import route Components here
 import {
     HashRouter as Router,
     Route,
     Link,
     Switch,
-    Redirect
-} from 'react-router-dom'
-// import SecondPage from './SecondPage';
+    Redirect,
+} from 'react-router-dom';
+import { browserHistory } from 'react-router';
+
+import { createBrowserHistory } from 'history';
 import { Provider } from "react-redux";
 import store from "./store/index";
 
@@ -26,13 +26,25 @@ const SecondPage = Loadable({
     loading: Loading,
 });
 
-console.log('SecondPage :', SecondPage);
+const About = Loadable({
+    loader: () => import('./About'),
+    loading: Loading,
+});
+
+const Story = Loadable({
+    loader: () => import('./Story'),
+    loading: Loading,
+});
+
+
 ReactDOM.render(
     <Router>
         <Provider store={store}>
             <Switch>
                 <Route exact path="/" component={App} />
                 <Route path="/second-page" component={SecondPage} />
+                <Route path="/about" component={About} />
+                <Route path="/story" component={Story} />
             </Switch>
         </Provider>
     </Router>

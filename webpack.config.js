@@ -12,9 +12,19 @@ module.exports = {
     },
     output: {
         filename: 'bundle.js',
-        // chunkFilename: '[name].bundle.js',
         path: path.join(__dirname, 'dist'),
         publicPath: '/'
+    },
+    optimization: {
+        splitChunks: {
+            cacheGroups: {
+                commons: {
+                    test: /[\\/]node_modules[\\/]/,
+                    name: "vendor",
+                    chunks: "initial",
+                },
+            },
+        },
     },
     module: {
         rules: [
