@@ -113,44 +113,44 @@ $('.slider-sm-expmore').slick({
   });
 
 // Slider related stories 
-$('.slider-rs').slick({
-    infinite: false,
-    slidesToShow: 4,
-    autoplay:true,
-    arrows:false,
-    slidesToScroll: 2,
-    responsive: [
-    {
-      breakpoint: 767,
-      settings: {
-        arrows: false,
-        slidesToShow: 3,
-         // slidesToScroll: 1,
-       }
-     },
-     {
-      breakpoint: 480,
-      settings: {
-        arrows: false,
-        slidesToShow: 2,
-        // slidesToScroll: 1
-      }
-    }
-    ]
-  });
+// $('.slider-rs').slick({
+//     infinite: false,
+//     slidesToShow: 4,
+//     autoplay:true,
+//     arrows:false,
+//     slidesToScroll: 2,
+//     responsive: [
+//     {
+//       breakpoint: 767,
+//       settings: {
+//         arrows: false,
+//         slidesToShow: 3,
+//          // slidesToScroll: 1,
+//        }
+//      },
+//      {
+//       breakpoint: 480,
+//       settings: {
+//         arrows: false,
+//         slidesToShow: 2,
+//         // slidesToScroll: 1
+//       }
+//     }
+//     ]
+//   });
 
 
 
 
  // Slider Tredning Today
 
- $('.slider-tt').slick({
-    infinite: false,
-    arrows: false,
-    slidesToShow: 2,
-    // autoplay:true,
-    slidesToScroll: 1
-  });
+//  $('.slider-tt').slick({
+//     infinite: false,
+//     arrows: false,
+//     slidesToShow: 2,
+//     // autoplay:true,
+//     slidesToScroll: 1
+//   });
 
 
 });
