@@ -1265,7 +1265,7 @@ import jQuery from "jquery";
         var _ = this;
 
         if (!$(_.$slider).hasClass('slick-initialized')) {
-
+            console.log('_.$slider :', _.$slider);
             $(_.$slider).addClass('slick-initialized');
 
             _.buildRows();

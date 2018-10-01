@@ -9,7 +9,6 @@ module.exports = {
     devtool: 'inline-source-map',
     devServer: {
         contentBase: './dist',
-        host: '0.0.0.0'
     },
     output: {
         filename: 'bundle.js',
@@ -27,6 +26,12 @@ module.exports = {
             },
         },
     },
+    plugins: [
+        new webpack.ProvidePlugin({
+            $: "jquery",
+            jQuery: "jquery"
+        })
+    ],
     module: {
         rules: [
             {

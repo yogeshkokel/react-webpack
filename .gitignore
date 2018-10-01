@@ -7,3 +7,4 @@ public/*
 .vscode
 coverage
 dist
+src/img/.DS_Store
