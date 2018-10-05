@@ -6,6 +6,7 @@ import './js/script.js';
 import './js/slick.js';
 import axios from 'axios';
 import moment from 'moment';
+import Footer from './partial/footer'
 import ReactHtmlParser, { processNodes, convertNodeToElement, htmlparser2 } from 'react-html-parser';
 
 
@@ -18,59 +19,61 @@ class Story extends Component {
         }
     }
     componentDidMount() {
+
         let currentComponent = this;
 
         let { slugresponse } = this.state;
-        axios.get('http://localhost:5000/getSlug')
+        axios.get('http://localhost:5000/getStory')
             .then(function (response) {
                 if (response.data.hit._source.post_status == 'publish') {
                     currentComponent.setState({ slugresponse: response.data });
+                    $('.slider-rs').slick({
+                        infinite: false,
+                        slidesToShow: 4,
+                        autoplay: true,
+                        arrows: false,
+                        slidesToScroll: 2,
+                        responsive: [
+                            {
+                                breakpoint: 767,
+                                settings: {
+                                    arrows: false,
+                                    slidesToShow: 3,
+                                    // slidesToScroll: 1,
+                                }
+                            },
+                            {
+                                breakpoint: 480,
+                                settings: {
+                                    arrows: false,
+                                    slidesToShow: 2,
+                                    // slidesToScroll: 1
+                                }
+                            }
+                        ]
+                    });
+                    // Slider Tredning Today
+
+                    $('.slider-tt').slick({
+                        infinite: false,
+                        arrows: false,
+                        slidesToShow: 2,
+                        // autoplay:true,
+                        slidesToScroll: 1
+                    });
                 }
             })
             .catch(function (error) {
                 console.log(error);
             });
+    }
 
+    componentWillReceiveProps() {
 
-        $('.slider-rs').slick({
-            infinite: false,
-            slidesToShow: 4,
-            autoplay: true,
-            arrows: false,
-            slidesToScroll: 2,
-            responsive: [
-                {
-                    breakpoint: 767,
-                    settings: {
-                        arrows: false,
-                        slidesToShow: 3,
-                        // slidesToScroll: 1,
-                    }
-                },
-                {
-                    breakpoint: 480,
-                    settings: {
-                        arrows: false,
-                        slidesToShow: 2,
-                        // slidesToScroll: 1
-                    }
-                }
-            ]
-        });
-        // Slider Tredning Today
-
-        $('.slider-tt').slick({
-            infinite: false,
-            arrows: false,
-            slidesToShow: 2,
-            // autoplay:true,
-            slidesToScroll: 1
-        });
     }
 
     render() {
         let { slugresponse } = this.state;
-        console.log('slugresponse :', slugresponse);
         if (slugresponse && Object.keys(slugresponse).length > 0) {
             return (
                 <div>
@@ -172,10 +175,10 @@ class Story extends Component {
                                     <h1>{slugresponse.hit._source.post_title}</h1>
                                     <div className="hashtag text-yellow">#ItEndsWithMe</div>
                                     <p className="author">{slugresponse.hit._source.AUTHOR_NAME} , {moment(slugresponse.hit._source.post_date_gmt).format("DD MMM")}</p>
-                                    <div className="v-box mt-3" style={{ background: `url(${slugresponse.hit._source.FEATURED_IMAGE})` }}>
+                                    {/* <div className="v-box mt-3" style={{ background: `url(${slugresponse.hit._source.FEATURED_IMAGE})` }}>
                                         <span />
-                                    </div>
-                                    <div className="d-none d-md-block mt-4 pt-2">
+                                    </div> */}
+                                    {/* <div className="d-none d-md-block mt-4 pt-2">
                                         <ul className="list-inline">
                                             <a href="#" className=" ">
                                                 <li className="list-inline-item s-circle shadow" style={{ backgroundColor: '#3B5998' }}>
@@ -208,17 +211,17 @@ class Story extends Component {
                                                 </li>
                                             </a>
                                         </ul>
-                                    </div>
+                                    </div> */}
                                     {ReactHtmlParser(slugresponse.hit._source.post_content)}
                                     <div className="my-2">
                                         <h6 className="h4 font-weight-bold">Tags</h6>
-                                        <a href="#" className="text-yellow h4">
-                                            {/* {slugresponse.hit._source.TAGS.map((t) => {
-                                                return (
-                                                    
-                                                )
-                                            })} */}
-                                        </a>
+                                        {slugresponse.hit._source.TAGS.map((t, key) => {
+                                            return (
+                                                <a key={key} href={t.slug} className="text-yellow h4">
+                                                    #{t.name}
+                                                </a>
+                                            )
+                                        })}
                                     </div>
                                 </div>
                             </div>
@@ -618,7 +621,7 @@ class Story extends Component {
                         </a>
                     </div>
                     <footer>
-                        <h3>FOOTER LINKS</h3>
+                        <Footer />
                     </footer>
                     {/* Optional JavaScript */}
                     {/* jQuery first, then Popper.js, then Bootstrap JS */}

@@ -4,8 +4,7 @@ import { connect } from "react-redux";
 import uuidv1 from "uuid";
 import { addArticle } from "./store/actions/index";
 import List from './List';
-import { createHashHistory } from 'history';
-export const history = createHashHistory();
+import history from './history';
 
 
 

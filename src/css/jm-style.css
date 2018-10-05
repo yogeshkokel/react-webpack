@@ -473,7 +473,6 @@ nav .s-993{
     min-height: 150px;
     max-height: 250px;
     padding: 20px 18px;
-    /* overflow: ; */
     background-color: white;
 }
 .section-showbiz .content .dash{
@@ -1017,6 +1016,7 @@ nav .s-993{
     min-height: 150px;
     max-height: 270px;
     padding: 20px 18px;
+    /* overflow: ; */
     background-color: white;
 }
 .section-tm .content .dash{
@@ -1150,18 +1150,40 @@ nav .s-993{
 /*FOOTER SECTION*/
 footer{
     background: #000000; 
-    background: -webkit-linear-gradient(to right, #434343, #000000);
-    background: linear-gradient(to right, #434343, #000000); 
-    height: 35vh;
+    background: -webkit-linear-gradient(to right, #202020, #000000);
+    background: linear-gradient(to right, #202020, #000000); 
+    height: 230px;
 }
-footer h3{
-    padding-top: 18vh;
-    letter-spacing: 0.8px;
+footer img{
+    width: 230px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    padding: 5px 15px;
+    border-radius: 25px;
+    background-color: #e63045 ;
+}
+footer ul a{
+    text-decoration: none;
+}
+footer ul a:hover{
+    text-decoration: none;
+}
+footer ul li {
+    height: 45px;
+    width: 45px;
+    border-radius: 50%;
     text-align: center;
-    vertical-align: middle;
-    color: white;
-    font-size: 20px;
+    background-color: #383838;
+    margin: 3px;
 }
+footer ul li svg{
+    margin-top: 11px;
+    height: 23px;
+    width: 23px;
+}
+
+
 
 /*----------------------------------------------------------------------------------------------------------------------
 CATEGORY PAGE CSS
@@ -2106,26 +2128,30 @@ display: none;
     font-weight: bold;
     font-size: 2.5rem;
 }
+.storyboard img{
+    max-width: 100%;
+    height: auto;
+}
 .hashtag{
     font-weight: bolder;
     font-size: 1.3rem;
 }
 .storyboard .v-box{
-    position: relative;
-    width: 100%;
     height: 380px;
-    background-repeat: no-repeat !important;
+    max-width: 100%;
+    position: relative;
     background-size: cover !important;
+    background-repeat: no-repeat !important;
     background-position: center !important;
 }
 .storyboard .v-box span{
     width: 100%;
     height: 100%;
     position: absolute;
-    background: url(../img/landing-overlay.png);
-    background-repeat: no-repeat !important;
     background-size: cover !important;
     background-position: center !important;
+    background-repeat: no-repeat !important;
+    background: url(../img/landing-overlay.png);
 }
 .storyboard p{
     color: #253f3f;

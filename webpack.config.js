@@ -8,11 +8,12 @@ module.exports = {
     entry: './src/index.js',
     devtool: 'inline-source-map',
     devServer: {
+        historyApiFallback: true,
         contentBase: './dist',
     },
     output: {
         filename: 'bundle.js',
-        path: path.join(__dirname, 'dist'),
+        path: path.resolve(__dirname, 'dist'),
         publicPath: '/'
     },
     optimization: {

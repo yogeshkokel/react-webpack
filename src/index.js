@@ -2,17 +2,16 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import Loadable from 'react-loadable';
 import {
-    HashRouter as Router,
+    Router,
     Route,
     Link,
     Switch,
     Redirect,
 } from 'react-router-dom';
-import { browserHistory } from 'react-router';
-
-import { createBrowserHistory } from 'history';
+import history from './history';
 import { Provider } from "react-redux";
 import store from "./store/index";
+// const hist = createBrowserHistory();
 
 const Loading = () => <div>Loading...</div>;
 
@@ -36,17 +35,23 @@ const Story = Loadable({
     loading: Loading,
 });
 
+const FourOFour  = Loadable({
+    loader: () => import('./404'),
+    loading: Loading,
+})
 
 ReactDOM.render(
-    <Router>
-        <Provider store={store}>
+    <Provider store={store}>
+        <Router history={history}>
             <Switch>
                 <Route exact path="/" component={App} />
                 <Route path="/second-page" component={SecondPage} />
                 <Route path="/about" component={About} />
-                <Route path="/story" component={Story} />
+                <Route path="/2018/10/03/10-yoga-centres-to-get-your-zen-on" component={Story} />
+                <Route path="/2018/10/03/:post_name" component={Story} />
+                <Route component={FourOFour} />
             </Switch>
-        </Provider>
-    </Router>
+        </Router>
+    </Provider>
 
     , document.getElementById('app'));
