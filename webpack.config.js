@@ -10,6 +10,8 @@ module.exports = {
     devServer: {
         historyApiFallback: true,
         contentBase: './dist',
+        port: 3000,
+        host: '101.53.138.91'
     },
     output: {
         filename: 'bundle.js',

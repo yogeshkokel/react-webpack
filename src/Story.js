@@ -8,6 +8,7 @@ import axios from 'axios';
 import moment from 'moment';
 import Footer from './partial/footer'
 import ReactHtmlParser, { processNodes, convertNodeToElement, htmlparser2 } from 'react-html-parser';
+import { baseURL } from './constants/helper';
 
 
 class Story extends Component {
@@ -23,7 +24,7 @@ class Story extends Component {
         let currentComponent = this;
 
         let { slugresponse } = this.state;
-        axios.get('http://localhost:5000/getStory')
+        axios.get(baseURL+'getStory')
             .then(function (response) {
                 if (response.data.hit._source.post_status == 'publish') {
                     currentComponent.setState({ slugresponse: response.data });

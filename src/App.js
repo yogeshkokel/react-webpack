@@ -6,6 +6,7 @@ import { Link, Route } from 'react-router-dom';
 import List from './List';
 import axios from 'axios';
 import history from './history';
+import { baseURL } from './constants/helper';
 class App extends Component {
   constructor(props) {
     super(props)
@@ -19,7 +20,7 @@ class App extends Component {
   componentDidMount() {
     let currentComponent = this;
     let { categories } = this.state;
-    axios.get('http://localhost:5000/all-cat')
+    axios.get(baseURL + 'all-cat')
       .then(function (response) {
         currentComponent.setState({ categories: response.data.categories })
       })
@@ -36,7 +37,7 @@ class App extends Component {
 
   onSubmit() {
     let { search } = this.state;
-    axios.post('http://localhost:5000/getSlug', {
+    axios.post(baseURL + 'getSlug', {
       post_name: search
     })
       .then(function (response) {
