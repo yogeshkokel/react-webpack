@@ -9,7 +9,8 @@ import moment from 'moment';
 import Footer from './partial/footer'
 import ReactHtmlParser, { processNodes, convertNodeToElement, htmlparser2 } from 'react-html-parser';
 import { baseURL } from './constants/helper';
-
+import ExploreMoreCategory from './partial/exploreMoreCat';
+import Header from './partial/headerPartialComponent';
 
 class Story extends Component {
     constructor(props) {
@@ -24,7 +25,7 @@ class Story extends Component {
         let currentComponent = this;
 
         let { slugresponse } = this.state;
-        axios.get(baseURL+'getStory')
+        axios.get(baseURL + 'getStory')
             .then(function (response) {
                 if (response.data.hit._source.post_status == 'publish') {
                     currentComponent.setState({ slugresponse: response.data });
@@ -39,7 +40,7 @@ class Story extends Component {
                                 breakpoint: 767,
                                 settings: {
                                     arrows: false,
-                                    slidesToShow: 3,
+                                    slidesToShow: 2,
                                     // slidesToScroll: 1,
                                 }
                             },
@@ -62,6 +63,35 @@ class Story extends Component {
                         // autoplay:true,
                         slidesToScroll: 1
                     });
+
+                    $('.slider-exp-category').slick({
+                        infinite: false,
+                        slidesToShow: 5,
+                        arrows: false,
+                        slidesToScroll: 1,
+                        responsive: [
+                            {
+                                breakpoint: 990,
+                                settings: {
+                                    slidesToShow: 4
+                                }
+                            },
+                            {
+                                breakpoint: 768,
+                                settings: {
+                                    arrows: false,
+                                    slidesToShow: 4
+                                }
+                            },
+                            {
+                                breakpoint: 576,
+                                settings: {
+                                    arrows: false,
+                                    slidesToShow: 2
+                                }
+                            }
+                        ]
+                    });
                 }
             })
             .catch(function (error) {
@@ -78,49 +108,7 @@ class Story extends Component {
         if (slugresponse && Object.keys(slugresponse).length > 0) {
             return (
                 <div>
-                    <nav className="navbar navbar-expand-lg py-0 px-0 fixed-top">
-                        <a className="nav-burger navbar-toggler" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                            <span />
-                            <span />
-                            <span />
-                        </a>
-                        <a className="navbar-brand py-md-2" href="#">
-                            <img src={require('./img/missmalini-logo.svg')} className="mb-1" height={27} width={186} />
-                        </a>
-                        <a className="pt-1 pb-2 h-993" title="Search" href="#">
-                            <img src={require('./img/icon-search.svg')} width="20px" height="auto" />
-                        </a>
-                        <div className="container">
-                            <div className="collapse navbar-collapse" id="navbarSupportedContent">
-                                <ul className="navbar-nav mx-">
-                                    <li className="nav-item ml-0">
-                                        <ul className="nav-language">
-                                            <li className="mx-1"> English</li>
-                                            <li className="px-1"><a href="#"> हिंदी</a></li>
-                                        </ul>
-                                    </li>
-                                    <li className="nav-item">
-                                        <a className="nav-link" title="Bollywood" href="#">Bollywood </a>
-                                    </li>
-                                    <li className="nav-item">
-                                        <a className="nav-link" title="Television" href="#">Television</a>
-                                    </li>
-                                    <li className="nav-item">
-                                        <a className="nav-link" title="Fashion" href="#">Fashion</a>
-                                    </li>
-                                    <li className="nav-item">
-                                        <a className="nav-link" title="Lifestyle" href="#">Lifestyle</a>
-                                    </li>
-                                    <li className="nav-item">
-                                        <a className="nav-link" title="Malini's World" href="#">Malini's World</a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                        <a className="pt-1 pb-2 s-993" title="Search" href="#">
-                            <img src={require("./img/icon-search.svg")} width="20px" height="auto" />
-                        </a>
-                    </nav>
+                    <Header />
                     <a href="#" className="sm-sicon d-md-none" onClick={this.osidenav}>
                         <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 36 36" style={{ enableBackground: 'new 0 0 36 36' }} xmlSpace="preserve"><g><g><path fill="#ffffff" d="M22.1,6.7c0,0.3,0,0.6,0.1,1l-11,5.7c-1.2-1.1-2.8-1.8-4.6-1.8c-3.7,0-6.7,3-6.7,6.7c0,3.7,3,6.7,6.7,6.7c1.8,0,3.4-0.7,4.6-1.9l10.9,5.5c0,0.3-0.1,0.6-0.1,0.9c0,3.7,3,6.7,6.7,6.7c3.7,0,6.7-3,6.7-6.7c0-3.7-3-6.7-6.7-6.7c-1.8,0-3.4,0.7-4.6,1.9l-10.9-5.5c0-0.3,0.1-0.6,0.1-0.9c0-0.3,0-0.6-0.1-1l11-5.7c1.2,1.1,2.8,1.8,4.6,1.8c3.7,0,6.7-3,6.7-6.7c0-3.7-3-6.7-6.7-6.7C25.1,0,22.1,3,22.1,6.7" /></g></g></svg>
                     </a>
@@ -281,7 +269,8 @@ class Story extends Component {
                         <a href="#" className="bg-yellow">sHOW MORE COMMENTS</a>
                     </div>
                     <div className="section-sm-expmore d-md-none">
-                        <div className="container">
+                        <ExploreMoreCategory />
+                        {/* <div className="container">
                             <h2 className="px-4 py-2 text-yellow text-center">EXPLORE CHANGE</h2>
                             <div className="slider-sm-expmore pb-2 pt-4">
                                 <div>
@@ -321,7 +310,7 @@ class Story extends Component {
                                     </a>
                                 </div>
                             </div>
-                        </div>
+                        </div> */}
                     </div>
                     {/* Related Stories Section  */}
                     <div className="container px-0 section-rs">
