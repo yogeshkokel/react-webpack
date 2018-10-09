@@ -1,9 +1,4 @@
 import React, { Component } from 'react';
-import './css/jm-style.css';
-import './css/slick.css';
-import './css/slick-theme.css';
-import './js/script.js';
-import './js/slick.js';
 import axios from 'axios';
 import moment from 'moment';
 import Footer from './partial/footer'

@@ -1,4 +1,9 @@
 import React from 'react';
+import './css/jm-style.css';
+import './css/slick.css';
+import './css/slick-theme.css';
+import './js/script.js';
+import './js/slick.js';
 import ReactDOM from 'react-dom';
 import Loadable from 'react-loadable';
 import {
@@ -11,12 +16,14 @@ import {
 import history from './history';
 import { Provider } from "react-redux";
 import store from "./store/index";
+
+// import Home from './Home';
 // const hist = createBrowserHistory();
 
 const Loading = () => <div>Loading...</div>;
 
-const App = Loadable({
-    loader: () => import('./App'),
+const Home = Loadable({
+    loader: () => import('./Home'),
     loading: Loading,
 });
 
@@ -44,7 +51,7 @@ ReactDOM.render(
     <Provider store={store}>
         <Router history={history}>
             <Switch>
-                <Route exact path="/" component={App} />
+                <Route exact path="/" component={Home} />
                 <Route path="/second-page" component={SecondPage} />
                 <Route path="/about" component={About} />
                 <Route path="/2018/10/03/10-yoga-centres-to-get-your-zen-on" component={Story} />
