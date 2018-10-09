@@ -6,15 +6,24 @@ class Header extends Component {
         super(props)
     }
 
-    componentDidMount() {
-        
+    onSideBarCollapse() {
+        $('#sidebar').addClass('active');
+        $('.overlay').addClass('active');
+        $('.collapse.in').toggleClass('in');
+        $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+    }
+
+    onRemoveSidebarCollapse() {
+        $('#sidebar').removeClass('active');
+        $('.overlay').removeClass('active');
     }
 
     render() {
         return (
             <div>
+                <div onClick={this.onRemoveSidebarCollapse.bind(this)} className="overlay"></div>
                 <nav className="navbar navbar-expand-lg py-0 px-0 fixed-top">
-                    <a className="nav-burger" id="sidebarCollapse">
+                    <a className="nav-burger" id="sidebarCollapse" onClick={this.onSideBarCollapse.bind(this)}>
                         <span />
                         <span />
                         <span />
