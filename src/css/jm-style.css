@@ -1,4 +1,4 @@
-/*Stylesheet Jay Mewada*/
+/*STYLE SHEET JAY MEWADA*/
 @import url('https://fonts.googleapis.com/css?family=Lato:300,400,700,800,900');
 
 html, body {
@@ -8,6 +8,16 @@ html, body {
 .bg-slant{
 	background: url(../img/section-top-stripe.jpg) no-repeat top center;
     background-size: 100% auto;
+}
+#likes{
+    border: none;
+    z-index: 11111;
+    display: block;
+    position: static;
+    padding-left: 0;
+    margin-bottom: 10px;
+    outline: none !important;
+    background-color: transparent;
 }
 .section-space{
 	height: 60px;
@@ -27,6 +37,7 @@ html, body {
     font-weight: bold;
     max-height: 140px;
     overflow: hidden;
+    text-transform: capitalize;
 }
 .explore-more-block{
 	text-align: center;
@@ -88,6 +99,11 @@ html, body {
 	background-color: #FBC46F !important;
 }
 
+/*EXPLORE MORE BUTTON*/
+.exp-more-btn-block a:hover{
+    text-decoration: none;
+}
+
 /*LOAD MORE FROM MISS MALANI BUTTON */
 .load-more-mm{
     text-align: center;
@@ -129,6 +145,13 @@ nav .s-993{
     display: block;
     padding-right: 5%;
 }
+#nav-desktop{
+    top: 0;
+    width: 100%;
+    position: fixed;
+    transition: top 0.3s;
+    box-shadow: 0 .5rem 1rem rgba(0,0,0,.08)!important;
+  }
 .navbar-brand{
     background: url(../img/slant-pink.png);
     background-color: #e63045;
@@ -278,7 +301,7 @@ nav .s-993{
         padding:0 10% 0 0 !important;
     }
     .exp-title{
-        left: 50px;
+        left: 5%;
     }
 }
 
@@ -287,6 +310,119 @@ nav .s-993{
         padding:0 20% 0 0 !important;
     }
 }
+
+.yearbook-container{
+    background: url('../img/imp-img/blw-yb.png');
+    /*padding: 10px;*/
+    position: relative;
+    background-size: cover !important;
+    height: 230px;
+}
+.yearbook-container .yearbook-title{
+    top: -15px;
+    left: 10%;
+    padding: 5px 30px;
+    font-weight: bold;
+    font-size: 1.2rem;
+    position: absolute;
+    background-color: rgb(255, 255, 255);
+}
+.yearbook-container .box{
+    width: 95%;
+    margin: 0 auto;
+    margin-top: 20px;
+    text-align: center;
+}
+.yearbook-container .box a{
+    outline: none;
+}
+.yearbook-container .box a:hover{
+    text-decoration: none;
+}
+.yearbook-container .box .img-c{
+    
+    width: 100px;
+    height: 100px;
+    margin: 0 auto;
+    border-radius: 50%;
+    margin-bottom: 10px;
+    border:1.5px solid #f6ae8f;
+    background-size: cover !important;
+    background-position: center !important;
+}
+.yearbook-container .box .title{
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: bold;
+    display: none;
+}
+.yearbook-container .slick-center{
+    /*background-color: red;*/
+    transition: 0.3s ease;
+}
+.yearbook-container .slick-center .box{
+    margin-top: 0px;
+}
+.yearbook-container .slick-center .box .img-c{
+    height: 130px;
+    width: 130px;
+    margin-top: 0px !important;
+    z-index: 2 !important;
+    /*transition: 0.3s ease;*/
+}
+.yearbook-container .slick-center{
+    z-index: 2 !important;
+}
+.yearbook-container .slick-center .box .title{
+    display: block !important;
+}
+
+.yearbook-container .slick-prev{
+    top: 92% !important;
+    z-index: 1 !important;
+}
+.yearbook-container .slick-next{
+    top: 92% !important;
+    z-index: 1 !important;
+}
+.yearbook-container .slick-prev{
+    left: 42% !important;
+    z-index: 1 !important;
+    height: 15px !important;
+    width: 15px !important;
+}
+.yearbook-container .slick-next{
+    right: 42% !important;
+    z-index: 1 !important;
+    height: 15px !important;
+    width: 15px !important;
+}
+
+
+@media (max-width: 768px){
+    .yearbook-container .yearbook-title{
+        left: 5%;
+        padding: 5px 10px;
+    }
+    .yearbook-container .slick-prev, .slick-next{
+        top: 85% !important;
+    }
+    .yearbook-container .slick-prev{
+        left: 20% !important;
+        
+    }
+    .yearbook-container .slick-next{
+        right: 20% !important;
+        
+    }
+}
+
+
+
+
+
+
+
 
 /*FOLLOW US SECTION FINAL*/
 .follow_us{
@@ -1480,26 +1616,6 @@ CATEGORY PAGE CSS
 
 
 
-/*Media Queries for CATEGORY PAGE*/
-
-/*-----------------------------------------------------------------------------------------------------------
------------------------------------------------------------------------------------------------------------*/
-.slick-next{
-    margin-left: 50px !important;
-    float:left !important;
-}
-.slick-prev{
-    margin-right: 50px !important;
-}
-.slick-prev, .slick-next{
-    border: 1px solid grey !important;
-    background-color: grey !important;
-    border-radius: 50%;
-    height: 30px !important;
-    width: 30px !important;
-
-
-}
 
 @media (max-width: 992px){
 
@@ -2499,7 +2615,6 @@ nav .s-992{
     background-color: transparent;
 }
 .tt-sm-box svg{
-
     width: 30px;
     padding: 5px;
     height: auto;
@@ -2589,3 +2704,911 @@ nav .s-992{
   margin-left: 10px;
 }
 
+
+/*------------------------------------------------------------------------------------------------------------------
+CATEGORY PAGE CSS
+-------------------------------------------------------------------------------------------------------------------*/
+
+/*CATEGORY-SHOWBIZ*/
+.c-showbiz{
+
+}
+.c-showbiz a{
+    outline: none;
+    color: #000000;
+    text-decoration: none;
+}
+.c-showbiz a:hover{
+    color: #253f3f;
+    transition: 0.3s ease;
+    text-decoration: none;
+}
+.c-showbiz h1{
+    font-size: 1.4rem;
+    font-weight: bold;
+}
+.c-showbiz span{
+    height: 4px;
+    width: 200px;
+    display: block;
+    border-radius: 10px;
+}
+.c-showbiz .category-slider-showbiz .slick-prev{
+    left: -5% !important;
+}
+.c-showbiz .category-slider-showbiz .slick-next{
+    right: -5% !important;
+}
+.c-showbiz .category-slider-showbiz .box{
+    width: 95%;
+    height: 100%;
+    margin: 0 auto;
+    text-align: center;
+}
+.c-showbiz .category-slider-showbiz .box .heading{
+    bottom: 0;
+    width: 50%;
+    left: 50%;
+    z-index: 1;
+    color: #f6ae8f;
+    font-size: 1rem;
+    font-weight: bold;
+    margin-left: -25%;
+    text-align: center;
+    position: absolute;
+    padding: 8px 30px 0 30px;
+    text-transform: uppercase;
+    background-color: #ffffff;
+}
+.c-showbiz .category-slider-showbiz .box .img{
+    width: 100%;
+    height: 230px;
+    position: relative;
+    background-size: cover !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+}
+.c-showbiz .category-slider-showbiz .box .img span{
+    width: 100%;
+    height: 100%;
+    display: block;
+    position: absolute;
+    background-size: cover;
+    background-repeat: no-repeat !important;
+    background-position: center !important;
+    background: url("../img/imp-img/landing-overlay.png");
+}
+.c-showbiz .category-slider-showbiz .box .content{
+    padding: 10px;
+
+}
+.c-showbiz .category-slider-showbiz .box .content span{
+    width: 80%;
+    height: 4px;
+    display: block;
+    margin: 0 auto;
+    margin-top: 10px;
+    border-radius: 10px;
+}
+
+/*CATEGORY-VIDEOS*/
+.c-videos{
+    position: relative;
+    background-size: 100% 50% !important;
+    background-repeat: no-repeat !important;
+    background: url('../img/imp-img/bg-videos.png');
+}
+.c-videos a{
+    outline: none;
+    color: #000000;
+    text-decoration: none;
+}
+.c-videos a:hover{
+    color: #253f3f;
+    transition: 0.3s ease;
+    text-decoration: none;
+}
+.c-videos h2{
+    font-size: 1.4rem;
+    font-weight: bold;
+}
+.c-videos .box{
+    width: 95%;
+    margin: 0 auto;
+}
+.c-videos .box .img{
+    width: 100%;
+    height: 380px;
+    position: relative;
+    background-size: cover !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+}
+
+.c-videos .box .img span{
+    width: 100%;
+    height: 100%;
+    display: block;
+    position: absolute;
+    background-size: cover !important;
+    background-repeat: no-repeat !important;
+    background-position: center !important;
+    background: url("../img/imp-img/landing-overlay.png");
+}
+.c-videos .box .content{
+    position: relative;
+    padding: 10px 50px 0 0px;
+}
+.c-videos .box .content svg{
+    right: 0;
+    top: 22px;
+    width: 20px;
+    height: auto;
+    position: absolute;
+}
+
+/*CATEGORY-NEWS*/
+.c-news{
+    position: relative;
+    background: url('../img/imp-img/bg-news.png');
+    background-repeat: no-repeat;
+    background-size: 100% 25%;
+}
+.c-news .c-news-rocket{
+    background: url('../img/imp-img/c-news-rocket2.png');
+    background-repeat: no-repeat;
+    background-position: top right !important;
+    background-size: 50% 80%;
+
+}
+.c-news a{
+    outline: none;
+    color: #000000;
+    text-decoration: none;
+}
+.c-news a:hover{
+    color: #253f3f;
+    transition: 0.3s ease;
+    text-decoration: none;
+}
+.c-news h3{
+    font-size: 1.4rem;
+    font-weight: bold;
+}
+.c-news .img-rec{
+    width: 95%;
+    height: 370px;
+    margin: 0 auto;
+    position: relative;
+    background-size: cover !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+}
+.c-news .img-rec span{
+    width: 100%;
+    height: 100%;
+    display: block;
+    position: absolute;
+    background-size: cover !important;
+    background-repeat: no-repeat !important;
+    background-position: center !important;
+    background: url("../img/imp-img/landing-overlay.png");
+}
+.c-news .content-rec{
+    width: 95%;
+    position: relative;
+    padding-right: 30px;
+}
+.c-news .content-rec span{
+    height: 4px;
+    width: 130px;
+    display: block;
+    border-radius: 10px;
+}
+.c-news .content-rec svg{
+    top: 10px;
+    right: 5px;
+    width: 20px;
+    height: auto;
+    position: static;
+}
+.c-news .content-rec button {
+    border: none;
+    z-index: 11111;
+    display: block;
+    position: static;
+    padding-left: 0;
+    margin-bottom: 10px;
+    outline: none !important;
+    background-color: transparent;
+}
+.c-news .img{
+    width: 99%;
+    height: 230px;
+    position: relative;
+    margin: 0 auto;
+    background-size: cover !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+    /*background-color: red;*/
+
+}
+.c-news .img span{
+    width: 100%;
+    height: 100%;
+    display: block;
+    position: absolute;
+    background-size: cover !important;
+    background-repeat: no-repeat !important;
+    background-position: center !important;
+    background: url("../img/imp-img/landing-overlay.png");
+}
+.c-news .content{
+    padding-right: 30px;
+    position: relative;
+}
+.c-news .content svg{
+    height: auto;
+    width: 20px;
+    position: absolute;
+    right: 5px;
+    top: 12px;
+}
+.c-news .content span{
+    height: 4px;
+    width: 70%;
+    display: block;
+    margin-top: 10px;
+    border-radius: 10px;
+
+}
+.c-news .content-rec-2{
+    width: 95%;
+    margin: 0 auto; 
+    padding-right: 30px;
+    position: relative;
+}
+.c-news .content-rec-2 svg{
+    height: auto;
+    position: absolute;
+    right: 5px;
+    top: 12px;
+    width: 20px;
+}
+.c-news .content-rec-2 span{
+    width: 60%;
+    height: 4px;
+    display: block;
+    margin-top: 10px;
+    border-radius: 10px;
+}
+.c-news .sponsor-box{
+    height: 320px;
+    width: 100%;
+    background: #DA4453;  
+    text-align: center;
+    background: -webkit-linear-gradient(to right, #89216B, #DA4453);
+    background: linear-gradient(to right, #89216B, #DA4453); 
+
+}
+
+/*CATEGORY-INTERVIEWS*/
+.c-interviews{
+    position: relative;
+    background-size: 100% 30%!important;
+    background-repeat: no-repeat !important;
+    background: url('../img/imp-img/bg-interviews.png');
+}
+.c-interviews .c-hearts{
+    width: 80px;
+    height: 80px;
+    position: absolute;
+    top: -40px;
+    left: 30%;
+    background-color: red;
+    background-repeat: no-repeat !important;
+    background: url('../img/imp-img/heart.png');
+}
+
+.c-interviews a{
+    outline: none;
+    color: #000000;
+    text-decoration: none;
+}
+.c-interviews a:hover{
+    color: #253f3f;
+    transition: 0.3s ease;
+    text-decoration: none;
+}
+.c-interviews h4{
+    font-size: 1.4rem;
+    font-weight: bold;
+}
+.c-interviews .img{
+    width: 100%;
+    height: 320px;
+    position: relative;
+    background-size: 100% 100% !important;
+    background-repeat: no-repeat !important;
+    background-position: top-center 100% !important;
+}
+.c-interviews .img span{
+    width: 100%;
+    height: 100%;
+    display: block;
+    position: absolute;
+    background-size: cover !important;
+    background-repeat: no-repeat !important;
+    background-position: center 80% !important;
+    background: url("../img/imp-img/landing-overlay.png");
+}
+.c-interviews .content{
+    padding-right: 30px;
+    position: relative;
+}
+.c-interviews .content svg{
+    height: auto;
+    width: 20px;
+    position: absolute;
+    top: 13px;
+    right: 10px;
+}
+.c-interviews .content span{
+    width: 40%;
+    height: 4px;
+    display: block;
+    margin-top: 10px;
+    border-radius: 10px;
+}
+
+
+/*CATEGORY-FEATURES*/
+.c-features{
+    position: relative;
+    background-size: 100% !important;
+    background-repeat: no-repeat !important;
+    background: url('../img/imp-img/bg-features.png');
+}
+.c-features .c-fomo{
+    z-index: 1;
+    height: 80px;
+    width: 180px;
+    top: -65px;
+    left: 23%;
+    position: absolute;
+    background-color: red;
+    background: url('../img/imp-img/fomo.png');
+    background-repeat: no-repeat !important;
+
+}
+.c-features h5{
+    font-size: 1.4rem !important;
+    font-weight: bold;  
+}
+.c-features a{
+    outline: none;
+    color: #000000;
+    text-decoration: none;
+}
+.c-features a:hover{
+    color: #253f3f;
+    transition: 0.3s ease;
+    text-decoration: none;
+}
+.c-features h2{
+    font-size: 1.4rem;
+    font-weight: bold;
+}
+.c-features .box{
+    width: 95%;
+    margin: 0 auto;
+}
+.c-features .box .img{
+    width: 100%;
+    height: 380px;
+    position: relative;
+    background-size: cover !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+}
+
+.c-features .box .img span{
+    width: 100%;
+    height: 100%;
+    display: block;
+    position: absolute;
+    background-size: cover !important;
+    background-repeat: no-repeat !important;
+    background-position: center !important;
+    background: url("../img/imp-img/landing-overlay.png");
+}
+.c-features .box .content{
+    position: relative;
+    padding: 10px 50px 0 0px;
+}
+.c-features .box .content svg{
+    right: 0;
+    top: 22px;
+    width: 20px;
+    height: auto;
+    position: absolute;
+}
+
+.c-title{
+    background-color: #ffffff;
+    position: absolute;
+    left: 10%;
+    top: -15px;
+    padding: 5px 50px;
+}
+
+/*CATEGORY ROCKET*/
+.c-rocket{
+    height: 300px;
+    padding-top: 80px;
+    background-size: 100% 100% !important;
+    background-repeat: no-repeat !important;
+    background: url('../img/imp-img/c-rocket.png');
+
+}
+
+/*-----------------------------------------------------------------------------------------------*/
+/*MEDIA QUERIES IPAD MODE*/
+/*--------------------------------------------------------------------------------------------------*/
+@media (max-width: 992px){
+    /*CATEGORY NEWS*/
+    .c-interviews .c-hearts{
+        left: 45%;
+    }
+    /*CATEGORY FEATURES*/
+    .c-features .c-fomo{
+        left: 30%;
+    }
+}
+/*-----------------------------------------------------------------------------------------------*/
+/*MEDIA QUERIES TABLET MODE*/
+/*--------------------------------------------------------------------------------------------------*/
+
+@media (max-width: 768px){
+    .c-showbiz .category-slider-showbiz .box .img{
+        height: 280px;
+    }
+    .c-title{
+        left: 4%;
+    }
+    
+    /*CATEGORY SHOWBIZ*/
+    .c-showbiz .category-slider-showbiz .box{
+        width: 100%;
+        text-align: left;
+        /*background-color: red;
+        height: 400px;*/
+    }
+    .c-showbiz .category-slider-showbiz .box .heading{
+        /*display: none;*/
+        width: 90%;
+        left: 5%;
+        margin-left: 0;
+        bottom: -15px;
+        text-align: left;
+        padding: 8px 15px 0 15px;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+    }
+    .c-showbiz .category-slider-showbiz .box .content{
+        width: 90%;
+        padding: 15px;
+        margin: 0 auto;
+    }
+    .c-showbiz .category-slider-showbiz .box .content span{
+        float: left;
+        width: 50%;
+    }
+    .c-showbiz .category-slider-showbiz .slick-prev {
+        left: 5% !important;
+        top: 33% !important;
+        z-index: 1;
+    }
+    .c-showbiz .category-slider-showbiz .slick-next{
+        right: 5% !important;
+        top: 33% !important;
+        z-index: 1;
+    }
+
+    /*CATEGORY VIDEOS*/
+    .c-videos .box .img{
+        height: 180px;
+    }
+    .c-videos .box .content{
+        padding: 10px 20px 0 0px;
+    }
+
+    /*CATEGORY NEWS*/
+    .c-news{
+        background-size: 100% 8%;
+    }
+    .c-news .c-news-rocket{
+        background: none;
+    }
+    .c-news .content-rec{
+        margin: 0 auto;
+    }
+    .c-news .img-rec{
+        width: 91%;
+        height: 320px;
+    }
+    .c-news .content-rec{
+        width: 92%;
+    }
+    .c-news .content-rec-2{
+        width: 92%;
+    }
+    .c-news .content-rec svg{
+        height: auto;
+        position: absolute;
+        right: 5px;
+        top: 10px;
+        width: 20px;
+    }
+    .c-news .content-rec button{
+        left: 7%;
+        top: -40px;
+        position: absolute;
+    }
+    .c-news .img{
+        height: 320px;
+    }
+
+    /*CATEGORY INTERVIEWS*/
+    
+    .c-interviews .content span{
+        width: 55%;
+    }
+    .c-interviews .c-hearts{
+        left: 48%;
+    }
+
+    /*CATEGORY FEATURES*/
+    .c-features .c-fomo {
+        left: 33%;
+    }
+    .c-features .box .img{
+        height: 180px;  
+    }
+    .c-features .box .content{
+        padding: 0px 20px 0 0px;
+    }
+    .c-rocket {
+    height: 200px;
+    padding-top: 60px;
+    background-size: 120% 51% !important;
+    }
+
+
+
+}
+
+/*-----------------------------------------------------------------------------------------------*/
+/*MEDIA QUERIES MOBILE MODE*/
+/*--------------------------------------------------------------------------------------------------*/
+@media (max-width: 576px){
+    .c-interviews .c-hearts{
+        left: 70%;
+    }
+    .c-showbiz .category-slider-showbiz .box .img{
+        height: 250px;
+    }
+    /*CATEGORY FEATURES*/
+    .c-features .c-fomo {
+        left: 40%;
+        background-color: inherit;
+    }
+
+}
+
+
+
+
+
+/*---------------------------------------------------------------------------------------------------------------------------
+SUB CATEGORY PAGE CSS
+----------------------------------------------------------------------------------------------------------------------------*/
+/*MM Breadcrumb*/
+.mm-breadcrumb ol li:after{
+    content: '>>'
+}
+.mm-breadcrumb ol li:nth-last-of-type(1):after {
+    content: '';
+}
+.mm-breadcrumb a{
+    color: #f6ae8f;
+}
+.mm-breadcrumb a:hover{
+    text-decoration: none;
+    color: grey;
+    transition: 0.3s ease;
+}
+.mm-breadcrumb .active{
+    color: grey;
+    pointer-events: none;
+}
+
+/*SUBCATEGORY PAGE CSS*/
+
+.sc-h1{
+    font-size: 1.4rem;
+    font-weight: bold;
+}
+.sc-videos .c-hearts{
+    width: 80px;
+    height: 80px;
+    position: absolute;
+    top: -40px;
+    left: 30%;
+    background-color: red;
+    background-repeat: no-repeat !important;
+    background: url('../img/imp-img/heart.png');
+}
+.sc-videos .sc-title{
+    font-size: 1.4rem;
+    font-weight: bold;
+}
+.sc-dash{
+    height: 4px;
+    width: 200px;
+    display: block;
+    border-radius: 10px;
+}
+.sc-videos{
+    position: relative;
+    background-size: contain !important;
+    background-repeat: no-repeat !important; 
+    background: url('../img/imp-img/bg-videos.png');
+}
+.sc-title{
+    background-color: rgb(255, 255, 255);
+    position: absolute;
+    left: 10%;
+    top: -15px;
+    padding: 5px 50px;
+}
+.sc-videos a{
+    color: black;
+    text-decoration: none;
+}
+.sc-videos a:hover{
+    color: #253f3f;
+    transition: 0.3s ease;
+    text-decoration: none;
+}
+.flat-pink a{
+    color: black;
+    text-decoration: none;
+}
+.flat-pink a:hover{
+    color: #253f3f;
+    transition: 0.3s ease;
+    text-decoration: none;
+}
+.sc-videos .box{
+
+}
+.sc-videos .box .vid-box{
+    width: 100%;
+    height: 380px;
+    position: relative;
+    background-size: 100% 100% !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+}
+
+.sc-videos .box .vid-box span{
+    width: 100%;
+    height: 100%;
+    display: block;
+    position: absolute;
+    background-size: cover !important;
+    background-repeat: no-repeat !important;
+    background-position: center !important;
+    background: url(../img/imp-img/landing-overlay.png);
+}
+.sc-videos .box .content{
+    position: relative;
+    padding: 5px 50px 0 0px;
+}
+
+.sc-videos .box .content svg{
+    right: 0;
+    top: 20px;
+    width: 20px;
+    height: auto;
+    position: absolute;
+}
+.sc-videos .box .content span{
+    height: 4px;
+    width: 60%;
+    display: block;
+    margin-top: 10px;
+    border-radius: 10px;
+}
+
+/*SMALL BOX*/
+.box-sm{
+
+}
+.box-sm .vid-box-sm{
+    width: 100%;
+    height: 380px;
+    position: relative;
+    background-size: 100% 100% !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+}
+.box-sm .vid-box-sm span{
+    width: 100%;
+    height: 100%;
+    display: block;
+    position: absolute;
+    background-size: cover !important;
+    background-repeat: no-repeat !important;
+    background-position: center !important;
+    background: url(../img/imp-img/landing-overlay.png);
+}
+.box-sm .content{
+    position: relative;
+    padding: 5px 30px 0 0;
+}
+.box-sm .content svg{
+    right: 0;
+    top: 20px;
+    width: 20px;
+    height: auto;
+    position: absolute;
+}
+.box-sm .content span{
+    height: 4px;
+    width: 40%;
+    display: block;
+    margin-top: 10px;
+    border-radius: 10px;
+}
+
+.sc-videos{
+
+}
+.flat-pink{
+    position: relative;
+    background-size: 100% 90% !important;
+    background-repeat: no-repeat !important;
+    background: url(../img/imp-img/bg-news.png);
+
+}
+.flat-pink .vid-rec{
+    position: relative;
+    height: 370px;
+    background-size: 100% 100% !important;  
+}
+.flat-pink .vid-rec span{
+    width: 100%;
+    height: 100%;
+    display: block;
+    position: absolute;
+    background-size: cover !important;
+    background-repeat: no-repeat !important;
+    background-position: center !important;
+    background: url(../img/imp-img/landing-overlay.png);
+}
+.flat-pink .content{
+    position: relative;
+}
+.flat-pink svg{
+    width: 20px;
+    height: auto;
+    position: static;
+}
+.flat-pink .sc-rocket{
+    background: url(../img/imp-img/c-news-rocket2.png);
+    background-repeat: no-repeat;
+    background-position: top right !important;
+    background-size: 50% 80%;
+}
+.flat-pink .content span{
+    height: 4px;
+    width: 60%;
+    display: block;
+    margin-top: 10px;
+    border-radius: 10px;
+}
+
+
+
+
+@media (max-width: 992px){
+    /*CATEGORY NEWS*/
+    .sc-videos .c-hearts{
+        left: 40%;
+    }
+}
+
+
+
+
+
+
+
+/*-----------------------------------------------------------------------------------------------*/
+/*MEDIA QUERIES TABLET MODE*/
+/*--------------------------------------------------------------------------------------------------*/
+
+@media (max-width: 768px){
+    .sc-videos{
+        background-size: 100% 20% !important;
+    }
+    .sc-title{
+        left: 4%;
+    }
+    .sc-videos .box .vid-box{
+        height: 320px;
+        margin-bottom: 150px;
+    }
+    .sc-videos .box .content{
+        left: 5%;
+        top: 300px;
+        width: 90%;
+        position: absolute;
+        border-radius: 10px;
+        background-color: #ffffff;
+        padding: 5px 35px 15px 15px;
+    }
+    .sc-videos .box .content svg{
+        right: 15px;
+        top: 18px;
+    }
+    .box-sm{
+        width: 95%;
+        margin: 0 auto;
+    }
+    .box-sm .vid-box-sm{
+        height: 180px;
+
+    }
+    .box-sm .content{
+        padding: 5px 20px 0 0;
+    }
+    .flat-pink{
+        background: none;
+        position: relative;
+    }
+    .sc-rocket{
+        background: none !important;
+    }
+    .flat-pink .vid-rec{
+        height: 320px;
+        position: relative;
+        margin-bottom: 150px;
+    }
+    .flat-pink .row{
+        position: relative;
+    }
+    .flat-pink .content svg{
+        position: absolute;
+        right: 15px;
+        top: 18px;
+    }
+    .flat-pink .content{
+        width: 90%;
+        left: 5%;
+        bottom: 10px;
+        border-radius: 10px;
+        position: absolute;
+        background-color: #ffffff;
+        padding: 5px 35px 15px 15px;
+    }
+}
+
+
+@media (max-width: 576px){
+    .sc-videos .c-hearts{
+        left: 70%;
+    }
+}

@@ -42,7 +42,12 @@ const Story = Loadable({
     loading: Loading,
 });
 
-const FourOFour  = Loadable({
+const SubCategory = Loadable({
+    loader: () => import('./SubCategory'),
+    loading: Loading,
+})
+
+const FourOFour = Loadable({
     loader: () => import('./404'),
     loading: Loading,
 })
@@ -52,8 +57,7 @@ ReactDOM.render(
         <Router history={history}>
             <Switch>
                 <Route exact path="/" component={Home} />
-                <Route path="/second-page" component={SecondPage} />
-                <Route path="/about" component={About} />
+                <Route path="/sub-category" component={SubCategory} />
                 <Route path="/2018/10/03/10-yoga-centres-to-get-your-zen-on" component={Story} />
                 <Route path="/2018/10/03/:post_name" component={Story} />
                 <Route component={FourOFour} />
