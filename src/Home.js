@@ -36,6 +36,89 @@ class Home extends Component {
                 }
             ]
         });
+        $('.jm-slider-hd').slick({
+            arrows: false,
+            dots: true,
+            autplay: true,
+            autoplaySpeed: 3000,
+            responsive: [{
+                breakpoint: 767,
+                settings: {
+                    arrows: false,
+                    dots: false
+                }
+            }]
+        });
+        $('.jm-slider-by').slick({
+            centerMode: true,
+            autoplaySpeed: 3000,
+            autoplay: true,
+            centerPadding: '50px',
+            loop: true,
+            slidesToShow: 7,
+            responsive: [
+                {
+                    breakpoint: 982,
+                    settings: {
+                        arrows: false,
+                        centerMode: true,
+                        centerPadding: '40px',
+                        slidesToShow: 3
+                    }
+                },
+                {
+                    breakpoint: 480,
+                    settings: {
+                        arrows: false,
+                        centerMode: true,
+                        centerPadding: '50px',
+                        slidesToShow: 3
+                    }
+                }
+            ]
+        });
+        $('.jm-slider-qb').slick({
+            dots: true,
+            autoplay: true,
+            infinite: true,
+            slidesToShow: 1,
+            arrows: false
+        });
+        $('.jm-slider-hs').slick({
+            infinite: true,
+            autoplay: true,
+            autoplaySpeed: 5000,
+            arrows: false,
+            dots: true
+        });
+        $('.jm-slider-dy').slick({
+            centerMode: true,
+            autoplay: true,
+            loop: true,
+            arrows: false,
+            autoplaySpeed: 3000,
+            centerPadding: '70px',
+            slidesToShow: 3,
+            responsive: [
+                {
+                    breakpoint: 767,
+                    settings: {
+                        arrows: false,
+                        centerPadding: '40px',
+                        slidesToShow: 3
+                    }
+                },
+                {
+                    breakpoint: 480,
+                    settings: {
+                        arrows: false,
+                        // centerMode: false,
+                        centerPadding: '-5px',
+                        slidesToShow: 3
+                    }
+                }
+            ]
+        });
     }
 
     render() {
